@@ -61,7 +61,7 @@ namespace Calculator
             _firstNumber = 0;
             _secondNumber = 0;
             _currentState = 1;
-            this.ResultText.Text = "0";
+            ResultText.Text = "0";
         }
 
         void OnCalculate(object sender, EventArgs e)

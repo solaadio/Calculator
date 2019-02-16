@@ -1,6 +1,6 @@
 ﻿using System;
 using Xamarin.Forms;
-namespace Calculator
+namespace Calculator.Libraries
 {
     public static class SharedResources
     {
