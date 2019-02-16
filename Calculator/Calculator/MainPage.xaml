@@ -1,14 +1,110 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:Calculator"
-             x:Class="Calculator.MainPage">
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage x:Class="Calculator.MainPage"
+            xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:local="clr-namespace:Calculator"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Resources>
+        <ResourceDictionary>
 
-    <StackLayout>
-        <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
-    </StackLayout>
+            <OnPlatform x:TypeArguments="Font" Android="24" iOS="42" WinPhone="42" x:Key="TitleFontSize" />
+            
+            <Style TargetType="Button">
+                <Setter Property="Font" Value="{StaticResource TitleFontSize}">
+                    <!--<Setter.Value>
+                        <OnPlatform x:TypeArguments="Font">
+                            <OnPlatform.Android>48</OnPlatform.Android>
+                            <OnPlatform.iOS>48</OnPlatform.iOS>
+                            <OnPlatform.WinPhone>48</OnPlatform.WinPhone>
+                        </OnPlatform>
+                    </Setter.Value>-->
+                </Setter>
+                <!--<Setter Property="BorderWidth" Value="1"/>
+                <Setter Property="BorderColor" Value="Black"/>-->
+            </Style> 
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <OnPlatform.iOS>0,20,0,0</OnPlatform.iOS>
+        </OnPlatform>
+    </ContentPage.Padding>
 
+    <Grid Padding="5,0" RowSpacing="1" ColumnSpacing="1" BackgroundColor="Black">
+
+       <Grid.RowDefinitions>
+         <RowDefinition Height="2*" />
+         <RowDefinition Height="*" />
+         <RowDefinition Height="*" />
+         <RowDefinition Height="*" />
+         <RowDefinition Height="*" />
+         <RowDefinition Height="*" />
+       </Grid.RowDefinitions>
+
+       <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="*" />
+       </Grid.ColumnDefinitions>
+
+       <Label x:Name="resultText" FontSize="48" FontAttributes="Bold" BackgroundColor="Black" Text="0"
+              TextColor="White" HorizontalTextAlignment="End" VerticalTextAlignment="Center"
+              LineBreakMode="WordWrap" Grid.ColumnSpan="4" HorizontalOptions="FillAndExpand" />
+
+       <Button Text="7" Grid.Row="1" Grid.Column="0" HorizontalOptions="Fill" VerticalOptions="Fill"
+               BackgroundColor="White" TextColor="Black" 
+               BorderRadius="0" Clicked="OnSelectNumber" />
+       <Button Text="8" Grid.Row="1" Grid.Column="1"
+               BackgroundColor="White" TextColor="Black"
+               BorderRadius="0" Clicked="OnSelectNumber" />
+       <Button Text="9" Grid.Row="1" Grid.Column="2"
+               BackgroundColor="White" TextColor="Black"
+               BorderRadius="0" Clicked="OnSelectNumber" />
+
+      <Button Text="4" Grid.Row="2" Grid.Column="0"
+               BackgroundColor="White" TextColor="Black"
+               BorderRadius="0" Clicked="OnSelectNumber" />
+       <Button Text="5" Grid.Row="2" Grid.Column="1"
+               BackgroundColor="White" TextColor="Black"
+               BorderRadius="0" Clicked="OnSelectNumber" />
+       <Button Text="6" Grid.Row="2" Grid.Column="2"
+               BackgroundColor="White" TextColor="Black"
+               BorderRadius="0" Clicked="OnSelectNumber" />
+
+      <Button Text="1" Grid.Row="3" Grid.Column="0"
+               BackgroundColor="White" TextColor="Black"
+               BorderRadius="0" Clicked="OnSelectNumber" />
+       <Button Text="2" Grid.Row="3" Grid.Column="1"
+               BackgroundColor="White" TextColor="Black"
+               BorderRadius="0" Clicked="OnSelectNumber" />
+       <Button Text="3" Grid.Row="3" Grid.Column="2"
+               BackgroundColor="White" TextColor="Black"
+                BorderRadius="0" Clicked="OnSelectNumber" />
+       <Button Text="0" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3"
+               BackgroundColor="White" TextColor="Black"
+                BorderRadius="0" Clicked="OnSelectNumber" />
+
+       <Button Text="/" Grid.Row="1" Grid.Column="3"
+                BackgroundColor="{x:Static local:SharedResources.OpButtonBkColor}" TextColor="White"
+                BorderRadius="0" Clicked="OnSelectOperator" />
+       <Button Text="X" Grid.Row="2" Grid.Column="3"
+                BackgroundColor="{x:Static local:SharedResources.OpButtonBkColor}" TextColor="White"
+                BorderRadius="0" Clicked="OnSelectOperator" />
+       <Button Text="-" Grid.Row="3" Grid.Column="3"
+                BackgroundColor="{x:Static local:SharedResources.OpButtonBkColor}" TextColor="White"
+                BorderRadius="0" Clicked="OnSelectOperator" />
+       <Button Text="+" Grid.Row="4" Grid.Column="3"
+                BackgroundColor="{x:Static local:SharedResources.OpButtonBkColor}" TextColor="White"
+                BorderRadius="0" Clicked="OnSelectOperator" />
+
+       <Button Text="C" Grid.Row="5" Grid.Column="0" 
+                BackgroundColor="#808080" TextColor="White"
+                BorderRadius="0" Clicked="OnClear" />
+
+       <Button Text="=" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3" 
+                BackgroundColor="{x:Static local:SharedResources.OpButtonBkColor}" TextColor="White"
+                BorderRadius="0" Clicked="OnCalculate" />
+
+    </Grid>
 </ContentPage>
