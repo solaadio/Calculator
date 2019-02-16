@@ -148,12 +148,12 @@
     <Reference Include="Xamarin.iOS" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="3.4.0.1008975" />
+    <PackageReference Include="Xamarin.Forms" Version="3.5.0.129452" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
     <ProjectReference Include="..\Calculator\Calculator.csproj">
-      <Project>{BFD940CF-1C8F-454F-97D5-A794A6F6BAFA}</Project>
+      <Project>{997B9A86-A814-4FED-9AE5-17CE0B475A33}</Project>
       <Name>Calculator</Name>
     </ProjectReference>
   </ItemGroup>
