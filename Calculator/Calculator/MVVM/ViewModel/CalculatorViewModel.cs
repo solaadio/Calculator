@@ -1,5 +1,5 @@
 ﻿using System.Windows.Input;
-using Calculator.Libraries;
+using Calculator.Library;
 using Calculator.MVVM.Model;
 using Xamarin.Forms;
 

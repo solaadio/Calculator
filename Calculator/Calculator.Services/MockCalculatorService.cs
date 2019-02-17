@@ -1,6 +1,6 @@
 ﻿namespace Calculator.Services
 {
-    public class CalculatorService
+    public class MockCalculatorService : ICalculatorService
     {
         public int OnePlusOne()
         {

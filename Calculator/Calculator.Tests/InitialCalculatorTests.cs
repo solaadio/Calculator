@@ -1,7 +1,5 @@
-﻿
-using Calculator.Services;
+﻿using Calculator.Services;
 using NUnit.Framework;
-
 
 namespace Calculator.Tests
 {
@@ -26,7 +24,7 @@ namespace Calculator.Tests
         {
             // Arrange
             int expected = 2;
-            CalculatorService service = new CalculatorService();
+            ICalculatorService service = new MockCalculatorService();
 
             // Act
             int actual = service.OnePlusOne();

@@ -147,6 +147,10 @@
     <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform" Version="6.1.5" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Calculator.Library\Calculator.Library.csproj">
+      <Project>{a0abd6e4-6124-43bf-a658-a91ab9500c3a}</Project>
+      <Name>Calculator.Library</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Calculator\Calculator.csproj">
       <Project>{BFD940CF-1C8F-454F-97D5-A794A6F6BAFA}</Project>
       <Name>Calculator</Name>

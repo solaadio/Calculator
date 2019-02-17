@@ -2,7 +2,7 @@
 
 namespace Calculator.MVVM.View
 {
-    public partial class CalculatorView : ContentPage
+    public partial class CalculatorView
     {
         public CalculatorView()
         {

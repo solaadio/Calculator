@@ -1,4 +1,4 @@
-﻿using Calculator.Libraries;
+﻿using Calculator.Library;
 
 namespace Calculator.MVVM.Model
 {

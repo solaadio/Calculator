@@ -10,6 +10,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Libraries\BehaviorBase.cs" />
+    <Compile Remove="Libraries\EventToCommandBehavior.cs" />
+    <Compile Remove="Libraries\ModelBase.cs" />
+    <Compile Remove="Libraries\SelectedItemEventArgsToSelectedItemConverter.cs" />
+    <Compile Remove="Libraries\SharedResources.cs" />
+    <Compile Remove="Libraries\ViewModelBase.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="3.5.0.129452" />
   </ItemGroup>
   <ItemGroup>
@@ -21,6 +30,7 @@
     <Folder Include="MVVM\View\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Calculator.Library\Calculator.Library.csproj" />
     <ProjectReference Include="..\Calculator.Services\Calculator.Services.csproj" />
   </ItemGroup>
 </Project>
