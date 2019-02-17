@@ -1,9 +1,10 @@
 ﻿
 namespace Calculator.Libraries
 {
-	/// <summary>
-	/// View model base. - this is base class for all viewModels
-	/// </summary>
+	/// <inheritdoc />
+    /// <summary>
+    /// View model base. - this is base class for all viewModels
+    /// </summary>
 	public abstract class ViewModelBase : ModelBase
 	{
 
@@ -15,7 +16,7 @@ namespace Calculator.Libraries
 			{
 				_isBusy = value;
 
-				NotifyPropertyChanged("IsBusy");
+				NotifyPropertyChanged();
 			}
 		}
 
@@ -26,7 +27,7 @@ namespace Calculator.Libraries
 			set
 			{
 				_message = value;
-				NotifyPropertyChanged("Message");
+				NotifyPropertyChanged();
 			}
 
 		}

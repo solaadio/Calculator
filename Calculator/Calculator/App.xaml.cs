@@ -1,4 +1,5 @@
-﻿using Calculator.MVVM.ViewModel;
+﻿using Calculator.MVVM.View;
+using Calculator.MVVM.ViewModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 

@@ -2,7 +2,7 @@
 using System.Globalization;
 using Xamarin.Forms;
 
-namespace EventToCommandBehavior
+namespace Calculator.Libraries
 {
 	public class SelectedItemEventArgsToSelectedItemConverter : IValueConverter
 	{

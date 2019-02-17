@@ -1,7 +1,6 @@
-﻿using System;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
-namespace Calculator
+namespace Calculator.MVVM.View
 {
     public partial class CalculatorView : ContentPage
     {

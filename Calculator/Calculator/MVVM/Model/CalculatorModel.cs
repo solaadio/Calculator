@@ -1,5 +1,4 @@
-﻿using System;
-using Calculator.Libraries;
+﻿using Calculator.Libraries;
 
 namespace Calculator.MVVM.Model
 {
@@ -11,10 +10,6 @@ namespace Calculator.MVVM.Model
         private int _currentState;
         private string _resultText;
         private string _mathOperator;
-
-        public CalculatorModel()
-        {
-        }
 
         public string ResultText
         {

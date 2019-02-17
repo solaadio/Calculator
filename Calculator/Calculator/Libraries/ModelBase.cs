@@ -6,9 +6,10 @@ using System.Runtime.CompilerServices;
 
 namespace Calculator.Libraries
 {
-	/// <summary>
-	/// Model base. base class to implement INotifyPropertyChanged 
-	/// </summary>
+	/// <inheritdoc />
+    /// <summary>
+    /// Model base. base class to implement INotifyPropertyChanged 
+    /// </summary>
 	public class ModelBase : INotifyPropertyChanged
 	{
 		public event PropertyChangedEventHandler PropertyChanged = delegate { };

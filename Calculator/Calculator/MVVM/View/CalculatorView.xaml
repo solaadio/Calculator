@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage x:Class="Calculator.CalculatorView"
+<ContentPage x:Class="Calculator.MVVM.View.CalculatorView"
             xmlns="http://xamarin.com/schemas/2014/forms"
             xmlns:local="clr-namespace:Calculator.Libraries"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
@@ -11,8 +11,8 @@
                     <Setter.Value>
                         <OnPlatform x:TypeArguments="Font">
                             <On Platform="Android" Value="{x:Static local:SharedResources.AndroidLabelFontSize}"/>
-                            <On Platform="UWP" Value="{x:Static local:SharedResources.UWPLabelFontSize}"/>
-                            <On Platform="iOS" Value="{x:Static local:SharedResources.IOSLabelFontSize}"/>
+                            <On Platform="UWP" Value="{x:Static local:SharedResources.UwpLabelFontSize}"/>
+                            <On Platform="iOS" Value="{x:Static local:SharedResources.IosLabelFontSize}"/>
                         </OnPlatform>
                     </Setter.Value>
                </Setter>
@@ -33,8 +33,8 @@
                     <Setter.Value>
                         <OnPlatform x:TypeArguments="Font">
                             <On Platform="Android" Value="{x:Static local:SharedResources.AndroidButtonFontSize}"/>
-                            <On Platform="UWP" Value="{x:Static local:SharedResources.UWPButtonFontSize}"/>
-                            <On Platform="iOS" Value="{x:Static local:SharedResources.IOSButtonFontSize}"/>
+                            <On Platform="UWP" Value="{x:Static local:SharedResources.UwpButtonFontSize}"/>
+                            <On Platform="iOS" Value="{x:Static local:SharedResources.IosButtonFontSize}"/>
                         </OnPlatform>
                     </Setter.Value>
                </Setter>
@@ -48,8 +48,8 @@
                     <Setter.Value>
                         <OnPlatform x:TypeArguments="Font">
                             <On Platform="Android" Value="{x:Static local:SharedResources.AndroidButtonFontSize}"/>
-                            <On Platform="UWP" Value="{x:Static local:SharedResources.UWPButtonFontSize}"/>
-                            <On Platform="iOS" Value="{x:Static local:SharedResources.IOSButtonFontSize}"/>
+                            <On Platform="UWP" Value="{x:Static local:SharedResources.UwpButtonFontSize}"/>
+                            <On Platform="iOS" Value="{x:Static local:SharedResources.IosButtonFontSize}"/>
                         </OnPlatform>
                     </Setter.Value>
                </Setter>
@@ -63,8 +63,8 @@
                     <Setter.Value>
                         <OnPlatform x:TypeArguments="Font">
                             <On Platform="Android" Value="{x:Static local:SharedResources.AndroidButtonFontSize}"/>
-                            <On Platform="UWP" Value="{x:Static local:SharedResources.UWPButtonFontSize}"/>
-                            <On Platform="iOS" Value="{x:Static local:SharedResources.IOSButtonFontSize}"/>
+                            <On Platform="UWP" Value="{x:Static local:SharedResources.UwpButtonFontSize}"/>
+                            <On Platform="iOS" Value="{x:Static local:SharedResources.IosButtonFontSize}"/>
                         </OnPlatform>
                     </Setter.Value>
                </Setter>
