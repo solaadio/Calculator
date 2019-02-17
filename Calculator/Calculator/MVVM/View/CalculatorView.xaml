@@ -5,20 +5,78 @@
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <ContentPage.Resources>
         <ResourceDictionary>
-
-            <OnPlatform x:TypeArguments="Font" Android="24" iOS="42" WinPhone="42" x:Key="TitleFontSize" />
+                    
+            <Style x:Key="ResultLabelStyle" TargetType="Label">
+                <Setter Property="Font">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="Font">
+                            <On Platform="Android" Value="{x:Static local:SharedResources.AndroidLabelFontSize}"/>
+                            <On Platform="UWP" Value="{x:Static local:SharedResources.UWPLabelFontSize}"/>
+                            <On Platform="iOS" Value="{x:Static local:SharedResources.IOSLabelFontSize}"/>
+                        </OnPlatform>
+                    </Setter.Value>
+               </Setter>
+                <Setter Property="LineBreakMode" Value="WordWrap"/>
+                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="BackgroundColor" Value="Black"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="HorizontalTextAlignment" Value="End"/>
+                <Setter Property="VerticalTextAlignment" Value="Center"/>
+            </Style>
             
-            <Style TargetType="Button">
-                <Setter Property="Font" Value="{StaticResource TitleFontSize}"/>
-                <!--<Setter Property="BorderWidth" Value="1"/>
-                <Setter Property="BorderColor" Value="Black"/>-->
-            </Style> 
+            <Style x:Key="NumberButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="CornerRadius" Value="0"/>
+                <Setter Property="Font">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="Font">
+                            <On Platform="Android" Value="{x:Static local:SharedResources.AndroidButtonFontSize}"/>
+                            <On Platform="UWP" Value="{x:Static local:SharedResources.UWPButtonFontSize}"/>
+                            <On Platform="iOS" Value="{x:Static local:SharedResources.IOSButtonFontSize}"/>
+                        </OnPlatform>
+                    </Setter.Value>
+               </Setter>
+            </Style>
+
+            <Style x:Key="OperatorButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{x:Static local:SharedResources.OpButtonBkColor}"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="CornerRadius" Value="0"/>
+                <Setter Property="Font">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="Font">
+                            <On Platform="Android" Value="{x:Static local:SharedResources.AndroidButtonFontSize}"/>
+                            <On Platform="UWP" Value="{x:Static local:SharedResources.UWPButtonFontSize}"/>
+                            <On Platform="iOS" Value="{x:Static local:SharedResources.IOSButtonFontSize}"/>
+                        </OnPlatform>
+                    </Setter.Value>
+               </Setter>
+            </Style>
+            
+            <Style x:Key="CancelButton" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#808080"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="CornerRadius" Value="0"/>
+                <Setter Property="Font">
+                    <Setter.Value>
+                        <OnPlatform x:TypeArguments="Font">
+                            <On Platform="Android" Value="{x:Static local:SharedResources.AndroidButtonFontSize}"/>
+                            <On Platform="UWP" Value="{x:Static local:SharedResources.UWPButtonFontSize}"/>
+                            <On Platform="iOS" Value="{x:Static local:SharedResources.IOSButtonFontSize}"/>
+                        </OnPlatform>
+                    </Setter.Value>
+               </Setter>
+            </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
     
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness">
-            <OnPlatform.iOS>0,40,0,0</OnPlatform.iOS>
+            <On Platform="Android" Value="0, 0, 0, 0"/>
+            <On Platform="UWP" Value="0, 0, 0, 0"/>
+            <On Platform="iOS" Value="0, 40, 0, 0"/>
         </OnPlatform>
     </ContentPage.Padding>
 
@@ -40,78 +98,63 @@
           <ColumnDefinition Width="*" />
        </Grid.ColumnDefinitions>
 
-       <Label x:Name="ResultText" FontSize="48" FontAttributes="Bold" BackgroundColor="Black"
-              TextColor="White" HorizontalTextAlignment="End" VerticalTextAlignment="Center"
+       <Label Style="{StaticResource ResultLabelStyle}" 
               Text="{Binding ResultText,Mode=OneWay}"
-              LineBreakMode="WordWrap" Grid.ColumnSpan="4" HorizontalOptions="FillAndExpand" />
+               Grid.ColumnSpan="4"  />
 
-       <Button Text="7" Grid.Row="1" Grid.Column="0" HorizontalOptions="Fill" VerticalOptions="Fill"
-               BackgroundColor="White" TextColor="Black" 
-               CornerRadius="0" Command="{Binding OnSelectNumberCommand}" 
+       <Button Text="7" Grid.Row="1" Grid.Column="0" Style="{StaticResource NumberButton}"
+               HorizontalOptions="Fill" VerticalOptions="Fill"
+               Command="{Binding OnSelectNumberCommand}"
                CommandParameter="7" />
-       <Button Text="8" Grid.Row="1" Grid.Column="1"
-               BackgroundColor="White" TextColor="Black"
-               CornerRadius="0" Command="{Binding OnSelectNumberCommand}"
+       <Button Text="8" Grid.Row="1" Grid.Column="1" Style="{StaticResource NumberButton}"
+               Command="{Binding OnSelectNumberCommand}"
                CommandParameter="8"/>
-       <Button Text="9" Grid.Row="1" Grid.Column="2"
-               BackgroundColor="White" TextColor="Black"
-               CornerRadius="0" Command="{Binding OnSelectNumberCommand}"
+       <Button Text="9" Grid.Row="1" Grid.Column="2" Style="{StaticResource NumberButton}"
+               Command="{Binding OnSelectNumberCommand}"
                CommandParameter="9"/>
 
-      <Button Text="4" Grid.Row="2" Grid.Column="0"
-               BackgroundColor="White" TextColor="Black"
-               CornerRadius="0" Command="{Binding OnSelectNumberCommand}"
-              CommandParameter="4"/>
-       <Button Text="5" Grid.Row="2" Grid.Column="1"
-               BackgroundColor="White" TextColor="Black"
-               CornerRadius="0" Command="{Binding OnSelectNumberCommand}" 
+      <Button Text="4" Grid.Row="2" Grid.Column="0" Style="{StaticResource NumberButton}"
+               Command="{Binding OnSelectNumberCommand}"
+               CommandParameter="4"/>
+       <Button Text="5" Grid.Row="2" Grid.Column="1" Style="{StaticResource NumberButton}"
+               Command="{Binding OnSelectNumberCommand}" 
                CommandParameter="5"/>
-       <Button Text="6" Grid.Row="2" Grid.Column="2"
-               BackgroundColor="White" TextColor="Black"
-               CornerRadius="0" Command="{Binding OnSelectNumberCommand}" 
+       <Button Text="6" Grid.Row="2" Grid.Column="2" Style="{StaticResource NumberButton}"
+               Command="{Binding OnSelectNumberCommand}" 
                CommandParameter="6"/>
 
-      <Button Text="1" Grid.Row="3" Grid.Column="0"
-               BackgroundColor="White" TextColor="Black"
-               CornerRadius="0" Command="{Binding OnSelectNumberCommand}" 
+      <Button Text="1" Grid.Row="3" Grid.Column="0" Style="{StaticResource NumberButton}"
+              Command="{Binding OnSelectNumberCommand}" 
               CommandParameter="1"/>
-       <Button Text="2" Grid.Row="3" Grid.Column="1"
-               BackgroundColor="White" TextColor="Black"
-               CornerRadius="0" Command="{Binding OnSelectNumberCommand}"
+       <Button Text="2" Grid.Row="3" Grid.Column="1" Style="{StaticResource NumberButton}"
+               Command="{Binding OnSelectNumberCommand}"
                CommandParameter="2"/>
-       <Button Text="3" Grid.Row="3" Grid.Column="2"
-               BackgroundColor="White" TextColor="Black"
-                CornerRadius="0" Command="{Binding OnSelectNumberCommand}"
+       <Button Text="3" Grid.Row="3" Grid.Column="2" Style="{StaticResource NumberButton}"
+               Command="{Binding OnSelectNumberCommand}"
                CommandParameter="3"/>
-       <Button Text="0" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3"
-               BackgroundColor="White" TextColor="Black"
-                CornerRadius="0" Command="{Binding OnSelectNumberCommand}"
+       <Button Text="0" Grid.Row="4" Grid.Column="0" Style="{StaticResource NumberButton}" 
+               Grid.ColumnSpan="3"
+               Command="{Binding OnSelectNumberCommand}"
                CommandParameter="0"/>
 
-       <Button Text="/" Grid.Row="1" Grid.Column="3"
-                BackgroundColor="{x:Static local:SharedResources.OpButtonBkColor}" TextColor="White"
-                CornerRadius="0" Command="{Binding OnSelectOperatorCommand}" 
+       <Button Text="/" Grid.Row="1" Grid.Column="3" Style="{StaticResource OperatorButton}"
+               Command="{Binding OnSelectOperatorCommand}" 
                CommandParameter="/"/>
-       <Button Text="X" Grid.Row="2" Grid.Column="3"
-                BackgroundColor="{x:Static local:SharedResources.OpButtonBkColor}" TextColor="White"
-                CornerRadius="0"  Command="{Binding OnSelectOperatorCommand}" 
+       <Button Text="X" Grid.Row="2" Grid.Column="3" Style="{StaticResource OperatorButton}"
+               Command="{Binding OnSelectOperatorCommand}" 
                CommandParameter="X"/>
-       <Button Text="-" Grid.Row="3" Grid.Column="3"
-                BackgroundColor="{x:Static local:SharedResources.OpButtonBkColor}" TextColor="White"
-                CornerRadius="0"  Command="{Binding OnSelectOperatorCommand}"
+       <Button Text="-" Grid.Row="3" Grid.Column="3" Style="{StaticResource OperatorButton}"
+               Command="{Binding OnSelectOperatorCommand}"
                CommandParameter="-"/>
-       <Button Text="+" Grid.Row="4" Grid.Column="3"
-                BackgroundColor="{x:Static local:SharedResources.OpButtonBkColor}" TextColor="White"
-                CornerRadius="0"  Command="{Binding OnSelectOperatorCommand}"
+       <Button Text="+" Grid.Row="4" Grid.Column="3" Style="{StaticResource OperatorButton}"
+               Command="{Binding OnSelectOperatorCommand}"
                CommandParameter="+"/>
 
-       <Button Text="C" Grid.Row="5" Grid.Column="0" 
-                BackgroundColor="#808080" TextColor="White"
-                CornerRadius="0" Command="{Binding OnClearCommand}" />
+       <Button Text="C" Grid.Row="5" Grid.Column="0" Style="{StaticResource CancelButton}" 
+               Command="{Binding OnClearCommand}" />
 
        <Button Text="=" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3" 
-                BackgroundColor="{x:Static local:SharedResources.OpButtonBkColor}" TextColor="White"
-                CornerRadius="0" Command="{Binding OnCalculateCommand}" />
+               Command="{Binding OnCalculateCommand}"  Style="{StaticResource OperatorButton}" />
 
     </Grid>
 </ContentPage>
