@@ -9,15 +9,7 @@
             <OnPlatform x:TypeArguments="Font" Android="24" iOS="42" WinPhone="42" x:Key="TitleFontSize" />
             
             <Style TargetType="Button">
-                <Setter Property="Font" Value="{StaticResource TitleFontSize}">
-                    <!--<Setter.Value>
-                        <OnPlatform x:TypeArguments="Font">
-                            <OnPlatform.Android>48</OnPlatform.Android>
-                            <OnPlatform.iOS>48</OnPlatform.iOS>
-                            <OnPlatform.WinPhone>48</OnPlatform.WinPhone>
-                        </OnPlatform>
-                    </Setter.Value>-->
-                </Setter>
+                <Setter Property="Font" Value="{StaticResource TitleFontSize}"/>
                 <!--<Setter Property="BorderWidth" Value="1"/>
                 <Setter Property="BorderColor" Value="Black"/>-->
             </Style> 
