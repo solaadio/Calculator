@@ -1,4 +1,4 @@
-﻿using System;
+﻿using Calculator.MVVM.ViewModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -7,11 +7,17 @@ namespace Calculator
 {
     public partial class App : Application
     {
+        public static CalculatorViewModel MainViewModel { get; }
+
+        static App()
+        {
+            MainViewModel = new CalculatorViewModel();
+        }
+
         public App()
         {
             InitializeComponent();
-
-            MainPage = new MainPage();
+            MainPage = new CalculatorView();
         }
 
         protected override void OnStart()

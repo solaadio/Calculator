@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage x:Class="Calculator.MainPage"
+<ContentPage x:Class="Calculator.CalculatorView"
             xmlns="http://xamarin.com/schemas/2014/forms"
             xmlns:local="clr-namespace:Calculator.Libraries"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
@@ -26,7 +26,7 @@
     
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness">
-            <OnPlatform.iOS>0,20,0,0</OnPlatform.iOS>
+            <OnPlatform.iOS>0,40,0,0</OnPlatform.iOS>
         </OnPlatform>
     </ContentPage.Padding>
 
@@ -48,63 +48,78 @@
           <ColumnDefinition Width="*" />
        </Grid.ColumnDefinitions>
 
-       <Label x:Name="ResultText" FontSize="48" FontAttributes="Bold" BackgroundColor="Black" Text="0"
+       <Label x:Name="ResultText" FontSize="48" FontAttributes="Bold" BackgroundColor="Black"
               TextColor="White" HorizontalTextAlignment="End" VerticalTextAlignment="Center"
+              Text="{Binding ResultText,Mode=OneWay}"
               LineBreakMode="WordWrap" Grid.ColumnSpan="4" HorizontalOptions="FillAndExpand" />
 
        <Button Text="7" Grid.Row="1" Grid.Column="0" HorizontalOptions="Fill" VerticalOptions="Fill"
                BackgroundColor="White" TextColor="Black" 
-               CornerRadius="0" Clicked="OnSelectNumber" />
+               CornerRadius="0" Command="{Binding OnSelectNumberCommand}" 
+               CommandParameter="7" />
        <Button Text="8" Grid.Row="1" Grid.Column="1"
                BackgroundColor="White" TextColor="Black"
-               CornerRadius="0" Clicked="OnSelectNumber" />
+               CornerRadius="0" Command="{Binding OnSelectNumberCommand}"
+               CommandParameter="8"/>
        <Button Text="9" Grid.Row="1" Grid.Column="2"
                BackgroundColor="White" TextColor="Black"
-               CornerRadius="0" Clicked="OnSelectNumber" />
+               CornerRadius="0" Command="{Binding OnSelectNumberCommand}"
+               CommandParameter="9"/>
 
       <Button Text="4" Grid.Row="2" Grid.Column="0"
                BackgroundColor="White" TextColor="Black"
-               CornerRadius="0" Clicked="OnSelectNumber" />
+               CornerRadius="0" Command="{Binding OnSelectNumberCommand}"
+              CommandParameter="4"/>
        <Button Text="5" Grid.Row="2" Grid.Column="1"
                BackgroundColor="White" TextColor="Black"
-               CornerRadius="0" Clicked="OnSelectNumber" />
+               CornerRadius="0" Command="{Binding OnSelectNumberCommand}" 
+               CommandParameter="5"/>
        <Button Text="6" Grid.Row="2" Grid.Column="2"
                BackgroundColor="White" TextColor="Black"
-               CornerRadius="0" Clicked="OnSelectNumber" />
+               CornerRadius="0" Command="{Binding OnSelectNumberCommand}" 
+               CommandParameter="6"/>
 
       <Button Text="1" Grid.Row="3" Grid.Column="0"
                BackgroundColor="White" TextColor="Black"
-               CornerRadius="0" Clicked="OnSelectNumber" />
+               CornerRadius="0" Command="{Binding OnSelectNumberCommand}" 
+              CommandParameter="1"/>
        <Button Text="2" Grid.Row="3" Grid.Column="1"
                BackgroundColor="White" TextColor="Black"
-               CornerRadius="0" Clicked="OnSelectNumber" />
+               CornerRadius="0" Command="{Binding OnSelectNumberCommand}"
+               CommandParameter="2"/>
        <Button Text="3" Grid.Row="3" Grid.Column="2"
                BackgroundColor="White" TextColor="Black"
-                CornerRadius="0" Clicked="OnSelectNumber" />
+                CornerRadius="0" Command="{Binding OnSelectNumberCommand}"
+               CommandParameter="3"/>
        <Button Text="0" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3"
                BackgroundColor="White" TextColor="Black"
-                CornerRadius="0" Clicked="OnSelectNumber" />
+                CornerRadius="0" Command="{Binding OnSelectNumberCommand}"
+               CommandParameter="0"/>
 
        <Button Text="/" Grid.Row="1" Grid.Column="3"
                 BackgroundColor="{x:Static local:SharedResources.OpButtonBkColor}" TextColor="White"
-                CornerRadius="0" Clicked="OnSelectOperator" />
+                CornerRadius="0" Command="{Binding OnSelectOperatorCommand}" 
+               CommandParameter="/"/>
        <Button Text="X" Grid.Row="2" Grid.Column="3"
                 BackgroundColor="{x:Static local:SharedResources.OpButtonBkColor}" TextColor="White"
-                CornerRadius="0" Clicked="OnSelectOperator" />
+                CornerRadius="0"  Command="{Binding OnSelectOperatorCommand}" 
+               CommandParameter="X"/>
        <Button Text="-" Grid.Row="3" Grid.Column="3"
                 BackgroundColor="{x:Static local:SharedResources.OpButtonBkColor}" TextColor="White"
-                CornerRadius="0" Clicked="OnSelectOperator" />
+                CornerRadius="0"  Command="{Binding OnSelectOperatorCommand}"
+               CommandParameter="-"/>
        <Button Text="+" Grid.Row="4" Grid.Column="3"
                 BackgroundColor="{x:Static local:SharedResources.OpButtonBkColor}" TextColor="White"
-                CornerRadius="0" Clicked="OnSelectOperator" />
+                CornerRadius="0"  Command="{Binding OnSelectOperatorCommand}"
+               CommandParameter="+"/>
 
        <Button Text="C" Grid.Row="5" Grid.Column="0" 
                 BackgroundColor="#808080" TextColor="White"
-                CornerRadius="0" Clicked="OnClear" />
+                CornerRadius="0" Command="{Binding OnClearCommand}" />
 
        <Button Text="=" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3" 
                 BackgroundColor="{x:Static local:SharedResources.OpButtonBkColor}" TextColor="White"
-                CornerRadius="0" Clicked="OnCalculate" />
+                CornerRadius="0" Command="{Binding OnCalculateCommand}" />
 
     </Grid>
 </ContentPage>
