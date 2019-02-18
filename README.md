@@ -14,4 +14,4 @@ Reusable styles are stored away in a Resource Dictionary.
 
 
 
-TODO: Precision of result display, Keyboard support
+TODO: Precision of result display, Keyboard support, display the first number, operator and second number in very small font just above the result display
