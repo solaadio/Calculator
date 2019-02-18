@@ -1,4 +1,5 @@
-﻿using System.Windows.Input;
+﻿using System.Globalization;
+using System.Windows.Input;
 using Calculator.Library;
 using Calculator.MVVM.Model;
 using Calculator.Services.Interfaces;
@@ -63,18 +64,23 @@ namespace Calculator.MVVM.ViewModel
                     _currentState *= -1;
             }
 
-            ResultText += pressed;
+            string resultText = ResultText + pressed;
 
-            if (double.TryParse(ResultText, out double number))
+            if (resultText == ".")
             {
-                ResultText = number.ToString("N0");
+                resultText = "0.";
+            }
+
+            if (double.TryParse(resultText, out double number))
+            {
+                ResultText = resultText;
                 if (_currentState == 1)
                 {
-                    _firstNumber = (int)number;
+                    _firstNumber = number;
                 }
                 else
                 {
-                    _secondNumber = (int)number;
+                    _secondNumber = number;
                 }
             }
         }
@@ -92,7 +98,7 @@ namespace Calculator.MVVM.ViewModel
             {
                 var result = _service.Calculate(_firstNumber, _secondNumber, _mathOperator);
 
-                ResultText = result.ToString("N5");
+                ResultText = result.ToString();
                 _firstNumber = result;
                 _currentState = -1;
             }

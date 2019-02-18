@@ -5,7 +5,7 @@
             xmlns:library="clr-namespace:Calculator.Library;assembly=Calculator.Library">
     <ContentPage.Resources>
         <ResourceDictionary>
-                    
+
             <Style x:Key="ResultLabelStyle" TargetType="Label">
                 <Setter Property="Font">
                     <Setter.Value>
@@ -15,7 +15,7 @@
                             <On Platform="iOS" Value="{x:Static library:SharedResources.IosLabelFontSize}"/>
                         </OnPlatform>
                     </Setter.Value>
-               </Setter>
+                </Setter>
                 <Setter Property="LineBreakMode" Value="WordWrap"/>
                 <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
@@ -24,7 +24,7 @@
                 <Setter Property="HorizontalTextAlignment" Value="End"/>
                 <Setter Property="VerticalTextAlignment" Value="Center"/>
             </Style>
-            
+
             <Style x:Key="NumberButton" TargetType="Button">
                 <Setter Property="BackgroundColor" Value="White"/>
                 <Setter Property="TextColor" Value="Black"/>
@@ -37,7 +37,7 @@
                             <On Platform="iOS" Value="{x:Static library:SharedResources.IosButtonFontSize}"/>
                         </OnPlatform>
                     </Setter.Value>
-               </Setter>
+                </Setter>
             </Style>
 
             <Style x:Key="OperatorButton" TargetType="Button">
@@ -52,9 +52,9 @@
                             <On Platform="iOS" Value="{x:Static library:SharedResources.IosButtonFontSize}"/>
                         </OnPlatform>
                     </Setter.Value>
-               </Setter>
+                </Setter>
             </Style>
-            
+
             <Style x:Key="CancelButton" TargetType="Button">
                 <Setter Property="BackgroundColor" Value="#808080"/>
                 <Setter Property="TextColor" Value="White"/>
@@ -67,11 +67,11 @@
                             <On Platform="iOS" Value="{x:Static library:SharedResources.IosButtonFontSize}"/>
                         </OnPlatform>
                     </Setter.Value>
-               </Setter>
+                </Setter>
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
-    
+
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness">
             <On Platform="Android" Value="0, 0, 0, 0"/>
@@ -82,78 +82,84 @@
 
     <Grid Padding="5,0" RowSpacing="1" ColumnSpacing="1" BackgroundColor="Black">
 
-       <Grid.RowDefinitions>
-         <RowDefinition Height="2*" />
-         <RowDefinition Height="*" />
-         <RowDefinition Height="*" />
-         <RowDefinition Height="*" />
-         <RowDefinition Height="*" />
-         <RowDefinition Height="*" />
-       </Grid.RowDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
 
-       <Grid.ColumnDefinitions>
-          <ColumnDefinition Width="*" />
-          <ColumnDefinition Width="*" />
-          <ColumnDefinition Width="*" />
-          <ColumnDefinition Width="*" />
-       </Grid.ColumnDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
-       <Label Style="{StaticResource ResultLabelStyle}" 
+        <Label Style="{StaticResource ResultLabelStyle}" 
               Text="{Binding ResultText,Mode=OneWay}"
                Grid.ColumnSpan="4"  />
 
-       <Button Text="7" Grid.Row="1" Grid.Column="0" Style="{StaticResource NumberButton}"
+        <Button Text="7" Grid.Row="1" Grid.Column="0" Style="{StaticResource NumberButton}"
                HorizontalOptions="Fill" VerticalOptions="Fill"
                Command="{Binding OnSelectNumberCommand}"
                CommandParameter="7" />
-       <Button Text="8" Grid.Row="1" Grid.Column="1" Style="{StaticResource NumberButton}"
+        <Button Text="8" Grid.Row="1" Grid.Column="1" Style="{StaticResource NumberButton}"
                Command="{Binding OnSelectNumberCommand}"
                CommandParameter="8"/>
-       <Button Text="9" Grid.Row="1" Grid.Column="2" Style="{StaticResource NumberButton}"
+        <Button Text="9" Grid.Row="1" Grid.Column="2" Style="{StaticResource NumberButton}"
                Command="{Binding OnSelectNumberCommand}"
                CommandParameter="9"/>
 
-      <Button Text="4" Grid.Row="2" Grid.Column="0" Style="{StaticResource NumberButton}"
+        <Button Text="4" Grid.Row="2" Grid.Column="0" Style="{StaticResource NumberButton}"
                Command="{Binding OnSelectNumberCommand}"
                CommandParameter="4"/>
-       <Button Text="5" Grid.Row="2" Grid.Column="1" Style="{StaticResource NumberButton}"
+        <Button Text="5" Grid.Row="2" Grid.Column="1" Style="{StaticResource NumberButton}"
                Command="{Binding OnSelectNumberCommand}" 
                CommandParameter="5"/>
-       <Button Text="6" Grid.Row="2" Grid.Column="2" Style="{StaticResource NumberButton}"
+        <Button Text="6" Grid.Row="2" Grid.Column="2" Style="{StaticResource NumberButton}"
                Command="{Binding OnSelectNumberCommand}" 
                CommandParameter="6"/>
 
-      <Button Text="1" Grid.Row="3" Grid.Column="0" Style="{StaticResource NumberButton}"
+        <Button Text="1" Grid.Row="3" Grid.Column="0" Style="{StaticResource NumberButton}"
               Command="{Binding OnSelectNumberCommand}" 
               CommandParameter="1"/>
-       <Button Text="2" Grid.Row="3" Grid.Column="1" Style="{StaticResource NumberButton}"
+        <Button Text="2" Grid.Row="3" Grid.Column="1" Style="{StaticResource NumberButton}"
                Command="{Binding OnSelectNumberCommand}"
                CommandParameter="2"/>
-       <Button Text="3" Grid.Row="3" Grid.Column="2" Style="{StaticResource NumberButton}"
+        <Button Text="3" Grid.Row="3" Grid.Column="2" Style="{StaticResource NumberButton}"
                Command="{Binding OnSelectNumberCommand}"
                CommandParameter="3"/>
-       <Button Text="0" Grid.Row="4" Grid.Column="0" Style="{StaticResource NumberButton}" 
-               Grid.ColumnSpan="3"
+
+        <Button Text="0" Grid.Row="4" Grid.Column="0" Style="{StaticResource NumberButton}" 
+               Grid.ColumnSpan="2"
                Command="{Binding OnSelectNumberCommand}"
                CommandParameter="0"/>
+        <Button Text="." Grid.Row="4" Grid.Column="2" Style="{StaticResource NumberButton}" 
+                Command="{Binding OnSelectNumberCommand}"
+                CommandParameter="."/>
 
-       <Button Text="/" Grid.Row="1" Grid.Column="3" Style="{StaticResource OperatorButton}"
+
+
+        <Button Text="/" Grid.Row="1" Grid.Column="3" Style="{StaticResource OperatorButton}"
                Command="{Binding OnSelectOperatorCommand}" 
                CommandParameter="/"/>
-       <Button Text="X" Grid.Row="2" Grid.Column="3" Style="{StaticResource OperatorButton}"
+        <Button Text="X" Grid.Row="2" Grid.Column="3" Style="{StaticResource OperatorButton}"
                Command="{Binding OnSelectOperatorCommand}" 
                CommandParameter="X"/>
-       <Button Text="-" Grid.Row="3" Grid.Column="3" Style="{StaticResource OperatorButton}"
+        <Button Text="-" Grid.Row="3" Grid.Column="3" Style="{StaticResource OperatorButton}"
                Command="{Binding OnSelectOperatorCommand}"
                CommandParameter="-"/>
-       <Button Text="+" Grid.Row="4" Grid.Column="3" Style="{StaticResource OperatorButton}"
+        <Button Text="+" Grid.Row="4" Grid.Column="3" Style="{StaticResource OperatorButton}"
                Command="{Binding OnSelectOperatorCommand}"
                CommandParameter="+"/>
 
-       <Button Text="C" Grid.Row="5" Grid.Column="0" Style="{StaticResource CancelButton}" 
+        <Button Text="C" Grid.Row="5" Grid.Column="0" Style="{StaticResource CancelButton}" 
                Command="{Binding OnClearCommand}" />
 
-       <Button Text="=" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3" 
+        <Button Text="=" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3" 
                Command="{Binding OnCalculateCommand}"  Style="{StaticResource OperatorButton}" />
 
     </Grid>
