@@ -16,6 +16,12 @@ namespace Calculator.Services.Implementations
                 case "-":
                     result = firstNumber - secondNumber;
                     break;
+                case "X":
+                    result = firstNumber * secondNumber;
+                    break;
+                case "/":
+                    result = firstNumber / secondNumber;
+                    break;
             }
 
             return result;
