@@ -47,7 +47,9 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DecimalsTests\CalculatorServiceDecimalsTests.cs" />
+    <Compile Include="DoubleTests\CalculatorServiceDoubleTests.cs" />
+    <Compile Include="DecimalTests\CalculatorServiceDecimalTests.cs" />
+    <Compile Include="FloatTests\CalculatorServiceFloatTests.cs" />
     <Compile Include="TDD\CalculatorServiceTDDInitialTests.cs" />
     <Compile Include="MockCalculatorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

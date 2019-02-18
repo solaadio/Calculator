@@ -1,74 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage x:Class="Calculator.MVVM.View.CalculatorView"
             xmlns="http://xamarin.com/schemas/2014/forms"
-            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-            xmlns:library="clr-namespace:Calculator.Library;assembly=Calculator.Library">
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <ContentPage.Resources>
         <ResourceDictionary>
-
-            <Style x:Key="ResultLabelStyle" TargetType="Label">
-                <Setter Property="Font">
-                    <Setter.Value>
-                        <OnPlatform x:TypeArguments="Font">
-                            <On Platform="Android" Value="{x:Static library:SharedResources.AndroidLabelFontSize}"/>
-                            <On Platform="UWP" Value="{x:Static library:SharedResources.UwpLabelFontSize}"/>
-                            <On Platform="iOS" Value="{x:Static library:SharedResources.IosLabelFontSize}"/>
-                        </OnPlatform>
-                    </Setter.Value>
-                </Setter>
-                <Setter Property="LineBreakMode" Value="WordWrap"/>
-                <Setter Property="HorizontalOptions" Value="FillAndExpand"/>
-                <Setter Property="FontAttributes" Value="Bold"/>
-                <Setter Property="BackgroundColor" Value="Black"/>
-                <Setter Property="TextColor" Value="White"/>
-                <Setter Property="HorizontalTextAlignment" Value="End"/>
-                <Setter Property="VerticalTextAlignment" Value="Center"/>
-            </Style>
-
-            <Style x:Key="NumberButton" TargetType="Button">
-                <Setter Property="BackgroundColor" Value="White"/>
-                <Setter Property="TextColor" Value="Black"/>
-                <Setter Property="CornerRadius" Value="0"/>
-                <Setter Property="Font">
-                    <Setter.Value>
-                        <OnPlatform x:TypeArguments="Font">
-                            <On Platform="Android" Value="{x:Static library:SharedResources.AndroidButtonFontSize}"/>
-                            <On Platform="UWP" Value="{x:Static library:SharedResources.UwpButtonFontSize}"/>
-                            <On Platform="iOS" Value="{x:Static library:SharedResources.IosButtonFontSize}"/>
-                        </OnPlatform>
-                    </Setter.Value>
-                </Setter>
-            </Style>
-
-            <Style x:Key="OperatorButton" TargetType="Button">
-                <Setter Property="BackgroundColor" Value="{x:Static library:SharedResources.OpButtonBkColor}"/>
-                <Setter Property="TextColor" Value="White"/>
-                <Setter Property="CornerRadius" Value="0"/>
-                <Setter Property="Font">
-                    <Setter.Value>
-                        <OnPlatform x:TypeArguments="Font">
-                            <On Platform="Android" Value="{x:Static library:SharedResources.AndroidButtonFontSize}"/>
-                            <On Platform="UWP" Value="{x:Static library:SharedResources.UwpButtonFontSize}"/>
-                            <On Platform="iOS" Value="{x:Static library:SharedResources.IosButtonFontSize}"/>
-                        </OnPlatform>
-                    </Setter.Value>
-                </Setter>
-            </Style>
-
-            <Style x:Key="CancelButton" TargetType="Button">
-                <Setter Property="BackgroundColor" Value="#808080"/>
-                <Setter Property="TextColor" Value="White"/>
-                <Setter Property="CornerRadius" Value="0"/>
-                <Setter Property="Font">
-                    <Setter.Value>
-                        <OnPlatform x:TypeArguments="Font">
-                            <On Platform="Android" Value="{x:Static library:SharedResources.AndroidButtonFontSize}"/>
-                            <On Platform="UWP" Value="{x:Static library:SharedResources.UwpButtonFontSize}"/>
-                            <On Platform="iOS" Value="{x:Static library:SharedResources.IosButtonFontSize}"/>
-                        </OnPlatform>
-                    </Setter.Value>
-                </Setter>
-            </Style>
+            <ResourceDictionary Source="../../Styles/CalculatorStyles.xaml" />
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -140,8 +76,6 @@
         <Button Text="." Grid.Row="4" Grid.Column="2" Style="{StaticResource NumberButton}" 
                 Command="{Binding OnSelectNumberCommand}"
                 CommandParameter="."/>
-
-
 
         <Button Text="/" Grid.Row="1" Grid.Column="3" Style="{StaticResource OperatorButton}"
                Command="{Binding OnSelectOperatorCommand}" 

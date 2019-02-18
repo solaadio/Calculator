@@ -1,5 +1,4 @@
-﻿using System;
-using System.Globalization;
+﻿using System.Globalization;
 using System.Windows.Input;
 using Calculator.Library;
 using Calculator.MVVM.Model;
@@ -8,14 +7,24 @@ using Xamarin.Forms;
 
 namespace Calculator.MVVM.ViewModel
 {
+    /// <summary>
+    /// CalculatorViewModel class
+    /// </summary>
     public class CalculatorViewModel : ViewModelBase
     {
+
+        #region Private members
+
         private readonly CalculatorModel _calculatorModel = new CalculatorModel();
         private readonly ICalculatorService _service;
-        private double _firstNumber;
-        private double _secondNumber;
+        private float _firstNumber;
+        private float _secondNumber;
         private int _currentState;
         private string _mathOperator;
+
+        #endregion
+
+        #region Constructor
 
         public CalculatorViewModel(ICalculatorService service)
         {
@@ -23,6 +32,7 @@ namespace Calculator.MVVM.ViewModel
             OnClear();
         }
 
+        #endregion
 
         #region Commands
 
@@ -36,6 +46,8 @@ namespace Calculator.MVVM.ViewModel
 
         #endregion
 
+        #region Public Properties
+
         public string ResultText
         {
             get => _calculatorModel.ResultText;
@@ -46,6 +58,10 @@ namespace Calculator.MVVM.ViewModel
             }
         }
 
+        #endregion
+
+        #region Private methods
+
         private void OnClear()
         {
             _firstNumber = 0;
@@ -54,7 +70,7 @@ namespace Calculator.MVVM.ViewModel
             ResultText = "0";
         }
 
-        void OnSelectNumber(object buttonPressed)
+        private void OnSelectNumber(object buttonPressed)
         {
             string pressed = buttonPressed.ToString();
 
@@ -77,7 +93,7 @@ namespace Calculator.MVVM.ViewModel
                 resultText = "0.";
             }
 
-            if (double.TryParse(resultText, out double number))
+            if (float.TryParse(resultText, out float number))
             {
                 ResultText = resultText;
                 if (_currentState == 1)
@@ -91,33 +107,26 @@ namespace Calculator.MVVM.ViewModel
             }
         }
 
-        void OnSelectOperator(object operatorButton)
+        private void OnSelectOperator(object operatorButton)
         {
             _currentState = -2;
             string pressed = operatorButton.ToString();
             _mathOperator = pressed;
         }
 
-        void OnCalculate()
+        private void OnCalculate()
         {
             if (_currentState == 2)
             {
-                var result = _service.Calculate(_firstNumber, _secondNumber, _mathOperator);
-
-                var tempResult = Convert.ToString(result);
-                if (tempResult.Length > 10)
-                {
-                    tempResult = result.ToString("e8");
-                }
-                else
-                {
-                    tempResult = result.ToString("N");
-                }
+                var result = _service.CalculateFloat(_firstNumber, _secondNumber, _mathOperator);
+                var tempResult = result.ToString(CultureInfo.CurrentCulture);
 
                 ResultText = tempResult;
                 _firstNumber = result;
                 _currentState = -1;
             }
         }
+
+        #endregion
     }
 }

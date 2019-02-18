@@ -2,6 +2,9 @@
 
 namespace Calculator.MVVM.Model
 {
+    /// <summary>
+    /// CalculatorModel - data model passed between the view and the viewmodel
+    /// </summary>
     public class CalculatorModel : ModelBase
     {
         private string _resultText;

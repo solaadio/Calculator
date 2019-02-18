@@ -1,7 +1,6 @@
 ﻿using Calculator.MVVM.View;
 using Calculator.MVVM.ViewModel;
 using Calculator.Services.Implementations;
-using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]

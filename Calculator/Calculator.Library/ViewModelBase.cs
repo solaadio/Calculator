@@ -11,8 +11,8 @@ namespace Calculator.Library
 		protected bool _isBusy;
 		public bool IsBusy
 		{
-			get { return _isBusy; }
-			set
+			get => _isBusy;
+            set
 			{
 				_isBusy = value;
 
@@ -23,8 +23,8 @@ namespace Calculator.Library
 		protected string _message;
 		public string Message
 		{
-			get { return _message; }
-			set
+			get => _message;
+            set
 			{
 				_message = value;
 				NotifyPropertyChanged();

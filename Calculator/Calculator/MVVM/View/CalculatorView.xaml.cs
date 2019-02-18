@@ -1,7 +1,8 @@
-﻿using Xamarin.Forms;
-
-namespace Calculator.MVVM.View
+﻿namespace Calculator.MVVM.View
 {
+    /// <summary>
+    /// CalculatorView
+    /// </summary>
     public partial class CalculatorView
     {
         public CalculatorView()

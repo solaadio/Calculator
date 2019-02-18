@@ -13,14 +13,14 @@ namespace Calculator.Tests.TDD
         public void Test_That_One_Plus_One_Equals_Two()
         {
             // Arrange
-            int expected = 2;
-            int firstNumber = 1;
-            int secondNumber = 1;
-            string mathOperator = "+";
+            const float expected = 2;
+            const float firstNumber = 1;
+            const float secondNumber = 1;
+            const string mathOperator = "+";
             ICalculatorService service = new CalculatorService();
 
             // Act
-            double actual = service.Calculate(firstNumber, secondNumber, mathOperator);
+            var actual = service.CalculateFloat(firstNumber, secondNumber, mathOperator);
 
 
             //Assert
@@ -31,14 +31,14 @@ namespace Calculator.Tests.TDD
         public void Test_That_One_Minus_One_Equals_Zero()
         {
             // Arrange
-            int expected = 0;
-            int firstNumber = 1;
-            int secondNumber = 1;
-            string mathOperator = "-";
+            const float expected = 0;
+            const float firstNumber = 1;
+            const float secondNumber = 1;
+            const string mathOperator = "-";
             ICalculatorService service = new CalculatorService();
 
             // Act
-            double actual = service.Calculate(firstNumber, secondNumber, mathOperator);
+            var actual = service.CalculateFloat(firstNumber, secondNumber, mathOperator);
 
 
             //Assert
@@ -49,14 +49,14 @@ namespace Calculator.Tests.TDD
         public void Test_That_Four_Times_One_Equals_Four()
         {
             // Arrange
-            int expected = 4;
-            int firstNumber = 4;
-            int secondNumber = 1;
-            string mathOperator = "X";
+            const float expected = 4;
+            const float firstNumber = 4;
+            const float secondNumber = 1;
+            const string mathOperator = "X";
             ICalculatorService service = new CalculatorService();
 
             // Act
-            double actual = service.Calculate(firstNumber, secondNumber, mathOperator);
+            var actual = service.CalculateFloat(firstNumber, secondNumber, mathOperator);
 
 
             //Assert
@@ -67,14 +67,14 @@ namespace Calculator.Tests.TDD
         public void Test_That_Four_Divided_By_Two_Equals_Two()
         {
             // Arrange
-            int expected = 2;
-            int firstNumber = 4;
-            int secondNumber = 2;
-            string mathOperator = "/";
+            const float expected = 2;
+            const float firstNumber = 4;
+            const float secondNumber = 2;
+            const string mathOperator = "/";
             ICalculatorService service = new CalculatorService();
 
             // Act
-            double actual = service.Calculate(firstNumber, secondNumber, mathOperator);
+            var actual = service.CalculateFloat(firstNumber, secondNumber, mathOperator);
 
 
             //Assert
@@ -85,14 +85,14 @@ namespace Calculator.Tests.TDD
         public void Test_That_Four_Divided_By_Zero_Does_Not_Crash()
         {
             // Arrange
-            double expected = double.PositiveInfinity;
-            int firstNumber = 4;
-            int secondNumber = 0;
-            string mathOperator = "/";
+            const float expected = float.PositiveInfinity;
+            const float firstNumber = 4;
+            const float secondNumber = 0;
+            const string mathOperator = "/";
             ICalculatorService service = new CalculatorService();
 
             // Act
-            double actual = service.Calculate(firstNumber, secondNumber, mathOperator);
+            var actual = service.CalculateFloat(firstNumber, secondNumber, mathOperator);
 
 
             //Assert
@@ -103,14 +103,14 @@ namespace Calculator.Tests.TDD
         public void Test_That_Minus_Four_Divided_By_Zero_Does_Not_Crash()
         {
             // Arrange
-            double expected = double.NegativeInfinity;
-            int firstNumber = -4;
-            int secondNumber = 0;
-            string mathOperator = "/";
+            const float expected = float.NegativeInfinity;
+            const float firstNumber = -4;
+            const float secondNumber = 0;
+            const string mathOperator = "/";
             ICalculatorService service = new CalculatorService();
 
             // Act
-            double actual = service.Calculate(firstNumber, secondNumber, mathOperator);
+            var actual = service.CalculateFloat(firstNumber, secondNumber, mathOperator);
 
 
             //Assert
