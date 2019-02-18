@@ -12,10 +12,10 @@ namespace Calculator.Library
 
         public static string UwpButtonFontSize => "42";
 
-        public static string AndroidLabelFontSize => "64";
+        public static string AndroidLabelFontSize => "42";
 
-        public static string IosLabelFontSize => "64";
+        public static string IosLabelFontSize => "42";
 
-        public static string UwpLabelFontSize => "64";
+        public static string UwpLabelFontSize => "42";
     }
 }

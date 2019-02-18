@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System;
+using System.Globalization;
 using System.Windows.Input;
 using Calculator.Library;
 using Calculator.MVVM.Model;
@@ -64,6 +65,11 @@ namespace Calculator.MVVM.ViewModel
                     _currentState *= -1;
             }
 
+            if (_currentState > 0 && ResultText.Length > 8)
+            {
+                return;
+            }
+
             string resultText = ResultText + pressed;
 
             if (resultText == ".")
@@ -98,7 +104,17 @@ namespace Calculator.MVVM.ViewModel
             {
                 var result = _service.Calculate(_firstNumber, _secondNumber, _mathOperator);
 
-                ResultText = result.ToString();
+                var tempResult = Convert.ToString(result);
+                if (tempResult.Length > 10)
+                {
+                    tempResult = result.ToString("e8");
+                }
+                else
+                {
+                    tempResult = result.ToString("N");
+                }
+
+                ResultText = tempResult;
                 _firstNumber = result;
                 _currentState = -1;
             }
