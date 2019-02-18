@@ -1,18 +1,19 @@
 ﻿using Calculator.MVVM.View;
 using Calculator.MVVM.ViewModel;
+using Calculator.Services.Implementations;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 [assembly: XamlCompilation(XamlCompilationOptions.Compile)]
 namespace Calculator
 {
-    public partial class App : Application
+    public partial class App
     {
         public static CalculatorViewModel MainViewModel { get; }
 
         static App()
         {
-            MainViewModel = new CalculatorViewModel();
+            MainViewModel = new CalculatorViewModel(new CalculatorService());
         }
 
         public App()

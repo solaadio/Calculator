@@ -1,6 +1,7 @@
 ﻿using System.Windows.Input;
 using Calculator.Library;
 using Calculator.MVVM.Model;
+using Calculator.Services.Interfaces;
 using Xamarin.Forms;
 
 namespace Calculator.MVVM.ViewModel
@@ -8,13 +9,15 @@ namespace Calculator.MVVM.ViewModel
     public class CalculatorViewModel : ViewModelBase
     {
         private readonly CalculatorModel _calculatorModel = new CalculatorModel();
-        private int _firstNumber;
-        private int _secondNumber;
+        private readonly ICalculatorService _service;
+        private double _firstNumber;
+        private double _secondNumber;
         private int _currentState;
         private string _mathOperator;
 
-        public CalculatorViewModel()
+        public CalculatorViewModel(ICalculatorService service)
         {
+            _service = service;
             OnClear();
         }
 
@@ -87,7 +90,7 @@ namespace Calculator.MVVM.ViewModel
         {
             if (_currentState == 2)
             {
-                var result = 0; // SimpleCalculator.Calculate(firstNumber, secondNumber, mathOperator);
+                var result = _service.Calculate(_firstNumber, _secondNumber, _mathOperator);
 
                 ResultText = result.ToString("N5");
                 _firstNumber = result;
