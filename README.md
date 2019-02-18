@@ -10,6 +10,7 @@ All non-platform specific code are in the .NET Standard project. NUnit is the te
 
 MVVM pattern used for the presentation layer.
 
+Reusable styles are stored away in a Resource Dictionary.
 
 
 
