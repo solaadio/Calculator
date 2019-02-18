@@ -1,10 +1,11 @@
-﻿using Calculator.Services;
+﻿using Calculator.Services.Implementations;
+using Calculator.Services.Interfaces;
 using NUnit.Framework;
 
 namespace Calculator.Tests
 {
     [TestFixture]
-    public class InitialCalculatorTests
+    public class MockCalculatorTests
     {
         [Test]
         public void MustPass()
@@ -24,7 +25,7 @@ namespace Calculator.Tests
         {
             // Arrange
             int expected = 2;
-            ICalculatorService service = new MockCalculatorService();
+            IMockCalculatorService service = new MockCalculatorService();
 
             // Act
             int actual = service.OnePlusOne();

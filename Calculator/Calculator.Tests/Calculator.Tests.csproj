@@ -47,7 +47,8 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="InitialCalculatorTests.cs" />
+    <Compile Include="CalculatorServiceTDDInitialTests.cs" />
+    <Compile Include="MockCalculatorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

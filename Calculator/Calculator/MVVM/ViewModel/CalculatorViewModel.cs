@@ -7,8 +7,11 @@ namespace Calculator.MVVM.ViewModel
 {
     public class CalculatorViewModel : ViewModelBase
     {
-
-        CalculatorModel CalculatorModel = new CalculatorModel();
+        private readonly CalculatorModel _calculatorModel = new CalculatorModel();
+        private int _firstNumber;
+        private int _secondNumber;
+        private int _currentState;
+        private string _mathOperator;
 
         public CalculatorViewModel()
         {
@@ -30,19 +33,19 @@ namespace Calculator.MVVM.ViewModel
 
         public string ResultText
         {
-            get => CalculatorModel.ResultText;
+            get => _calculatorModel.ResultText;
             set
             {
-                CalculatorModel.ResultText = value;
+                _calculatorModel.ResultText = value;
                 NotifyPropertyChanged();
             }
         }
 
         private void OnClear()
         {
-            CalculatorModel.FirstNumber = 0;
-            CalculatorModel.SecondNumber = 0;
-            CalculatorModel.CurrentState = 1;
+            _firstNumber = 0;
+            _secondNumber = 0;
+            _currentState = 1;
             ResultText = "0";
         }
 
@@ -50,11 +53,11 @@ namespace Calculator.MVVM.ViewModel
         {
             string pressed = buttonPressed.ToString();
 
-            if (ResultText == "0" || CalculatorModel.CurrentState < 0)
+            if (ResultText == "0" || _currentState < 0)
             {
                 ResultText = "";
-                if (CalculatorModel.CurrentState < 0)
-                    CalculatorModel.CurrentState *= -1;
+                if (_currentState < 0)
+                    _currentState *= -1;
             }
 
             ResultText += pressed;
@@ -62,33 +65,33 @@ namespace Calculator.MVVM.ViewModel
             if (double.TryParse(ResultText, out double number))
             {
                 ResultText = number.ToString("N0");
-                if (CalculatorModel.CurrentState == 1)
+                if (_currentState == 1)
                 {
-                    CalculatorModel.FirstNumber = (int)number;
+                    _firstNumber = (int)number;
                 }
                 else
                 {
-                    CalculatorModel.SecondNumber = (int)number;
+                    _secondNumber = (int)number;
                 }
             }
         }
 
         void OnSelectOperator(object operatorButton)
         {
-            CalculatorModel.CurrentState = -2;
+            _currentState = -2;
             string pressed = operatorButton.ToString();
-            CalculatorModel.MathOperator = pressed;
+            _mathOperator = pressed;
         }
 
         void OnCalculate()
         {
-            if (CalculatorModel.CurrentState == 2)
+            if (_currentState == 2)
             {
                 var result = 0; // SimpleCalculator.Calculate(firstNumber, secondNumber, mathOperator);
 
                 ResultText = result.ToString("N5");
-                CalculatorModel.FirstNumber = result;
-                CalculatorModel.CurrentState = -1;
+                _firstNumber = result;
+                _currentState = -1;
             }
         }
     }
