@@ -9,3 +9,8 @@ Keyboard support not implemented.
 All non-platform specific code are in the .NET Standard project. NUnit is the testing framework used.
 
 MVVM pattern used for the presentation layer.
+
+
+
+
+TODO: Precision of result display, Keyboard support
