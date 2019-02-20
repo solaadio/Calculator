@@ -20,7 +20,7 @@ Precision of result display
 
 Keyboard support
 
-display the first number, operator and second number in very small font just above the result display,
+display the first number, operator and second number in very small font just above the result display, (done)
 
 look into changing string to StringBuilder in the CalculatorViewModel
 
