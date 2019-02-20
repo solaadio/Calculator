@@ -40,6 +40,8 @@ namespace Calculator.MVVM.ViewModel
 
         public ICommand OnClearCommand => new Command(OnClear);
 
+        public ICommand OnClearCeCommand => new Command(OnClearCe);
+
         public ICommand OnSelectNumberCommand => new Command(OnSelectNumber);
 
         public ICommand OnSelectOperatorCommand => new Command(OnSelectOperator);
@@ -69,6 +71,21 @@ namespace Calculator.MVVM.ViewModel
             _firstNumber = 0;
             _secondNumber = 0;
             _currentState = 1;
+            ResultText = "0";
+        }
+
+        private void OnClearCe()
+        {
+           
+            if (_currentState == 1 || _currentState == -1)
+            {
+                _firstNumber = 0;
+            }
+            else
+            {
+                if (_currentState == 2 || _currentState == -2)
+                    _secondNumber = 0;
+            }
             ResultText = "0";
         }
 
