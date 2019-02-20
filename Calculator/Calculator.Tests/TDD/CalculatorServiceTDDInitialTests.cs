@@ -70,7 +70,7 @@ namespace Calculator.Tests.TDD
             const float expected = 2;
             const float firstNumber = 4;
             const float secondNumber = 2;
-            const string mathOperator = "/";
+            const string mathOperator = "÷";
             ICalculatorService service = new CalculatorService();
 
             // Act
@@ -88,7 +88,7 @@ namespace Calculator.Tests.TDD
             const float expected = float.PositiveInfinity;
             const float firstNumber = 4;
             const float secondNumber = 0;
-            const string mathOperator = "/";
+            const string mathOperator = "÷";
             ICalculatorService service = new CalculatorService();
 
             // Act
@@ -106,7 +106,7 @@ namespace Calculator.Tests.TDD
             const float expected = float.NegativeInfinity;
             const float firstNumber = -4;
             const float secondNumber = 0;
-            const string mathOperator = "/";
+            const string mathOperator = "÷";
             ICalculatorService service = new CalculatorService();
 
             // Act

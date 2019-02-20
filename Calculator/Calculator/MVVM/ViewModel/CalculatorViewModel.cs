@@ -5,8 +5,10 @@ using Calculator.MVVM.Model;
 using Calculator.Services.Interfaces;
 using Xamarin.Forms;
 
+// ReSharper disable once IdentifierTypo
 namespace Calculator.MVVM.ViewModel
 {
+    /// <inheritdoc />
     /// <summary>
     /// CalculatorViewModel class
     /// </summary>
@@ -110,7 +112,7 @@ namespace Calculator.MVVM.ViewModel
         private void OnSelectOperator(object operatorButton)
         {
             _currentState = -2;
-            string pressed = operatorButton.ToString();
+            var pressed = operatorButton.ToString();
             _mathOperator = pressed;
         }
 

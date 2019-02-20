@@ -1,4 +1,5 @@
-﻿using Calculator.Services.Interfaces;
+﻿using System;
+using Calculator.Services.Interfaces;
 
 namespace Calculator.Services.Implementations
 {
@@ -19,9 +20,11 @@ namespace Calculator.Services.Implementations
                 case "X":
                     result = firstNumber * secondNumber;
                     break;
-                case "/":
+                case "÷":
                     result = firstNumber / secondNumber;
                     break;
+                default:
+                    throw new ArgumentException("Unknown Operator");
             }
 
             return result;
@@ -42,9 +45,11 @@ namespace Calculator.Services.Implementations
                 case "X":
                     result = firstNumber * secondNumber;
                     break;
-                case "/":
+                case "÷":
                     result = firstNumber / secondNumber;
                     break;
+                default:
+                    throw new ArgumentException("Unknown Operator");
             }
 
             return result;
@@ -65,9 +70,11 @@ namespace Calculator.Services.Implementations
                 case "X":
                     result = firstNumber * secondNumber;
                     break;
-                case "/":
+                case "÷":
                     result = firstNumber / secondNumber;
                     break;
+                default:
+                    throw new ArgumentException("Unknown Operator");
             }
 
             return result;

@@ -1,4 +1,5 @@
-﻿using Calculator.Services.Implementations;
+﻿using System;
+using Calculator.Services.Implementations;
 using Calculator.Services.Interfaces;
 using NUnit.Framework;
 
@@ -10,7 +11,7 @@ namespace Calculator.Tests.DoubleTests
     {
 
         [Test]
-        public void Test_That_One_Half_Plus_One_Half_Equals_Three()
+        public void Test_01_That_One_Half_Plus_One_Half_Equals_Three()
         {
             // Arrange
             const int expected = 3;
@@ -28,7 +29,7 @@ namespace Calculator.Tests.DoubleTests
         }
 
         [Test]
-        public void Test_That_One_Half_Minus_One_Quarter_Equals_One_Quarter()
+        public void Test_02_That_One_Half_Minus_One_Quarter_Equals_One_Quarter()
         {
             // Arrange
             const double expected = .25f;
@@ -46,7 +47,7 @@ namespace Calculator.Tests.DoubleTests
         }
 
         [Test]
-        public void Test_That_One_Half_Times_One_Half_Equals_One_Quarter()
+        public void Test_03_That_One_Half_Times_One_Half_Equals_One_Quarter()
         {
             // Arrange
             const double expected = .25f;
@@ -64,54 +65,94 @@ namespace Calculator.Tests.DoubleTests
         }
 
         [Test]
-        public void Test_That_Three_Divided_By_Two_Equals_One_Half()
+        public void Test_04_That_Three_Divided_By_Two_Equals_One_Half()
         {
             // Arrange
-            const double expected = 1.5f;
             const int firstNumber = 3;
             const int secondNumber = 2;
             const string mathOperator = "/";
             ICalculatorService service = new CalculatorService();
 
             // Act
-            var actual = service.CalculateDouble(firstNumber, secondNumber, mathOperator);
-
-
             //Assert
-            Assert.AreEqual(expected, actual);
+            Assert.Throws<ArgumentException>(() => service.CalculateDouble(firstNumber, secondNumber, mathOperator));
         }
 
         [Test]
-        public void Test_That_Four_And_Half_Divided_By_Zero_Does_Not_Crash()
+        public void Test_05_That_Four_And_Half_Divided_By_Zero_Does_Not_Crash()
         {
             // Arrange
-            const double expected = double.PositiveInfinity;
             const double firstNumber = 4.5f;
             const double secondNumber = 0;
             const string mathOperator = "/";
             ICalculatorService service = new CalculatorService();
 
             // Act
-            var actual = service.CalculateDouble(firstNumber, secondNumber, mathOperator);
-
-
             //Assert
-            Assert.AreEqual(expected, actual);
+            Assert.Throws<ArgumentException>(() => service.CalculateDouble(firstNumber, secondNumber, mathOperator));
+
         }
 
         [Test]
-        public void Test_That_Minus_Four_And_Half_Divided_By_Zero_Does_Not_Crash()
+        public void Test_06_That_Minus_Four_And_Half_Divided_By_Zero_Does_Not_Crash()
         {
             // Arrange
-            const double expected = double.NegativeInfinity;
             const double firstNumber = -4.5f;
             const double secondNumber = 0;
             const string mathOperator = "/";
             ICalculatorService service = new CalculatorService();
 
             // Act
+            //Assert
+            Assert.Throws<ArgumentException>(() => service.CalculateDouble(firstNumber, secondNumber, mathOperator));
+        }
+
+        [Test]
+        public void Test_07_That_Three_Divided_By_Two_Equals_One_Half()
+        {
+            // Arrange
+            const double expected = 1.5f;
+            const int firstNumber = 3;
+            const int secondNumber = 2;
+            const string mathOperator = "÷";
+            ICalculatorService service = new CalculatorService();
+
+            // Act
             var actual = service.CalculateDouble(firstNumber, secondNumber, mathOperator);
 
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void Test_08_That_Four_And_Half_Divided_By_Zero_Does_Not_Crash()
+        {
+            // Arrange
+            const double firstNumber = 4.5f;
+            const double secondNumber = 0;
+            const string mathOperator = "÷";
+            const double expected = double.PositiveInfinity;
+            ICalculatorService service = new CalculatorService();
+
+            // Act
+            var actual = service.CalculateDouble(firstNumber, secondNumber, mathOperator);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void Test_09_That_Minus_Four_And_Half_Divided_By_Zero_Does_Not_Crash()
+        {
+            // Arrange
+            const double firstNumber = -4.5f;
+            const double secondNumber = 0;
+            const string mathOperator = "÷";
+            const double expected = double.NegativeInfinity;
+            ICalculatorService service = new CalculatorService();
+
+            // Act
+            var actual = service.CalculateDouble(firstNumber, secondNumber, mathOperator);
 
             //Assert
             Assert.AreEqual(expected, actual);
