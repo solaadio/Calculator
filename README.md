@@ -16,7 +16,9 @@ Reusable styles are stored away in a Resource Dictionary.
 
 TODO: 
 
-Precision of result display
+Precision of result display (done)
+
+Added thousands separators (done)
 
 Keyboard support
 
