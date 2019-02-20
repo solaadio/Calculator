@@ -20,5 +20,12 @@ namespace Calculator.Library
         public static string IosLabelFontSize => "42";
 
         public static string UwpLabelFontSize => "42";
+
+        public static string AndroidHistoryLabelFontSize => "20";
+
+        public static string IosHistoryLabelFontSize => "20";
+
+        public static string UwpHistoryLabelFontSize => "20";
+
     }
 }
