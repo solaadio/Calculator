@@ -143,7 +143,7 @@ namespace Calculator.MVVM.ViewModel
             _currentState = -2;
             var pressed = operatorButton.ToString();
             _mathOperator = pressed;
-            HistoryText = _firstNumber + " " + _mathOperator;
+            HistoryText = _firstNumber + " " + _mathOperator + " ";
         }
 
         private void OnCalculate()

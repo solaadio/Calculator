@@ -1,4 +1,4 @@
-﻿<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
+<ResourceDictionary xmlns="http://xamarin.com/schemas/2014/forms"
                     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                     xmlns:library="clr-namespace:Calculator.Library;assembly=Calculator.Library">
 
@@ -12,7 +12,6 @@
                 </OnPlatform>
             </Setter.Value>
         </Setter>
-        <Setter Property="Margin" Value="0,10,0,0"/>
         <Setter Property="LineBreakMode" Value="WordWrap"/>
         <Setter Property="HorizontalOptions" Value="EndAndExpand"/>
         <Setter Property="BackgroundColor" Value="Black"/>
