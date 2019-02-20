@@ -7,7 +7,7 @@ namespace Calculator.Services.Implementations
     {
         public double CalculateDouble(double firstNumber, double secondNumber, string mathOperator)
         {
-            double result = 0;
+            double result;
 
             switch (mathOperator)
             {
@@ -32,7 +32,7 @@ namespace Calculator.Services.Implementations
 
         public decimal CalculateDecimal(decimal firstNumber, decimal secondNumber, string mathOperator)
         {
-            decimal result = 0;
+            decimal result;
 
             switch (mathOperator)
             {
@@ -57,7 +57,7 @@ namespace Calculator.Services.Implementations
 
         public float CalculateFloat(float firstNumber, float secondNumber, string mathOperator)
         {
-            float result = 0;
+            float result;
 
             switch (mathOperator)
             {

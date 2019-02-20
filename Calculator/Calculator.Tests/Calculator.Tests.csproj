@@ -53,11 +53,16 @@
     <Compile Include="TDD\CalculatorServiceTDDInitialTests.cs" />
     <Compile Include="MockCalculatorTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StringExtensionTests\ThousandsSeparatorTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Calculator.Library\Calculator.Library.csproj">
+      <Project>{a0abd6e4-6124-43bf-a658-a91ab9500c3a}</Project>
+      <Name>Calculator.Library</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Calculator.Services\Calculator.Services.csproj">
       <Project>{bcca5b58-cd9a-4a8b-869d-9d2c99b34709}</Project>
       <Name>Calculator.Services</Name>
