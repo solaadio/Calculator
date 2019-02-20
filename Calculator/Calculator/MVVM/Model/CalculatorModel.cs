@@ -19,5 +19,17 @@ namespace Calculator.MVVM.Model
             }
         }
 
+        private string _historyText;
+
+        public string HistoryText
+        {
+            get => _historyText;
+            set
+            {
+                _historyText = value;
+                NotifyPropertyChanged();
+            }
+        }
+
     }
 }

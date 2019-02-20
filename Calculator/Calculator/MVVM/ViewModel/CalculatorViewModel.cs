@@ -62,6 +62,17 @@ namespace Calculator.MVVM.ViewModel
             }
         }
 
+        public string HistoryText
+        {
+            get => _calculatorModel.HistoryText;
+            set
+            {
+                _calculatorModel.HistoryText = value;
+                NotifyPropertyChanged();
+            }
+        }
+
+
         #endregion
 
         #region Private methods
@@ -72,6 +83,7 @@ namespace Calculator.MVVM.ViewModel
             _secondNumber = 0;
             _currentState = 1;
             ResultText = "0";
+            HistoryText = "";
         }
 
         private void OnClearCe()
@@ -131,6 +143,7 @@ namespace Calculator.MVVM.ViewModel
             _currentState = -2;
             var pressed = operatorButton.ToString();
             _mathOperator = pressed;
+            HistoryText = _firstNumber + " " + _mathOperator;
         }
 
         private void OnCalculate()
@@ -143,6 +156,8 @@ namespace Calculator.MVVM.ViewModel
                 ResultText = tempResult;
                 _firstNumber = result;
                 _currentState = -1;
+                HistoryText = "";
+
             }
         }
 
