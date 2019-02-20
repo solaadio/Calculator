@@ -29,3 +29,5 @@ look into changing string to StringBuilder in the CalculatorViewModel
 Incorporate CE functionality (done)
 
 Change "/" to "÷" (done)
+
+Add +/- functionality (done)
