@@ -158,13 +158,31 @@ namespace Calculator.Tests.StringExtensionTests
             //Assert
             Assert.AreEqual(expected, actual);
         }
+
         [Test]
-        public void Test_09_0dot1()
+        public void Test_10_0dot1()
         {
 
             // Arrange            
             const string input = "0.1";
             const string expected = "0.1";
+
+
+            // Act
+            var actual = input.FormatWithThousandsSeparator();
+
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void Test_11_Minus0dot()
+        {
+
+            // Arrange            
+            const string input = "-0.";
+            const string expected = "-0.";
 
 
             // Act
