@@ -1,6 +1,6 @@
-﻿using System.Globalization;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 using Calculator.Library;
+using Calculator.Library.Extensions;
 using Calculator.MVVM.Model;
 using Calculator.Services.Interfaces;
 using Xamarin.Forms;
@@ -19,8 +19,8 @@ namespace Calculator.MVVM.ViewModel
 
         private readonly CalculatorModel _calculatorModel = new CalculatorModel();
         private readonly ICalculatorService _service;
-        private float _firstNumber;
-        private float _secondNumber;
+        private double _firstNumber;
+        private double _secondNumber;
         private int _currentState;
         private string _mathOperator;
 
@@ -124,9 +124,9 @@ namespace Calculator.MVVM.ViewModel
                 resultText = "0.";
             }
 
-            if (float.TryParse(resultText, out float number))
+            if (double.TryParse(resultText, out double number))
             {
-                ResultText = resultText;
+                ResultText = resultText.FormatWithThousandsSeparator();
                 if (_currentState == 1)
                 {
                     _firstNumber = number;
@@ -143,15 +143,15 @@ namespace Calculator.MVVM.ViewModel
             _currentState = -2;
             var pressed = operatorButton.ToString();
             _mathOperator = pressed;
-            HistoryText = _firstNumber + " " + _mathOperator + " ";
+            HistoryText = ResultText + " " + _mathOperator + " ";
         }
 
         private void OnCalculate()
         {
             if (_currentState == 2)
             {
-                var result = _service.CalculateFloat(_firstNumber, _secondNumber, _mathOperator);
-                var tempResult = result.ToString(CultureInfo.CurrentCulture);
+                var result = _service.CalculateDouble(_firstNumber, _secondNumber, _mathOperator);
+                var tempResult = result.ToString("").FormatWithThousandsSeparator();
 
                 ResultText = tempResult;
                 _firstNumber = result;
