@@ -93,7 +93,10 @@
         <Button Text="C" Grid.Row="5" Grid.Column="0" Style="{StaticResource CancelButton}" 
                Command="{Binding OnClearCommand}" />
 
-        <Button Text="=" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3" 
+        <Button Text="CE" Grid.Row="5" Grid.Column="1" Style="{StaticResource CancelButton}" 
+                Command="{Binding OnClearCeCommand}" />
+
+        <Button Text="=" Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2" 
                Command="{Binding OnCalculateCommand}"  Style="{StaticResource OperatorButton}" />
 
     </Grid>
