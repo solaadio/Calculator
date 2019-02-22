@@ -175,5 +175,22 @@ namespace Calculator.Tests.StringExtensionTests
             //Assert
             Assert.AreEqual(expected, actual);
         }
+
+        [Test]
+        public void Test_11_Minus0dot()
+        {
+
+            // Arrange            
+            const string input = "-0.";
+            const string expected = "-0.";
+
+
+            // Act
+            var actual = input.FormatWithThousandsSeparator();
+
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }

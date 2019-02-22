@@ -48,6 +48,9 @@ namespace Calculator.MVVM.ViewModel
 
         public ICommand OnCalculateCommand => new Command(OnCalculate);
 
+        public ICommand OnToggleNegateCommand => new Command(OnToggleNegate);
+
+
         #endregion
 
         #region Public Properties
@@ -160,6 +163,29 @@ namespace Calculator.MVVM.ViewModel
 
             }
         }
+
+        private void OnToggleNegate()
+        {
+
+            if (_currentState == 1 || _currentState == -1)
+            {
+                if (_firstNumber.Equals(0))
+                    return;
+                _firstNumber = _firstNumber * -1;
+                ResultText = _firstNumber.ToString("").FormatWithThousandsSeparator();
+            }
+            else
+            {
+                if (_currentState == 2 || _currentState == -2)
+                {
+                    if (_secondNumber.Equals(0))
+                        return;
+                    _secondNumber = _secondNumber * -1;
+                    ResultText = _secondNumber.ToString("").FormatWithThousandsSeparator();
+                }
+            }
+        }
+
 
         #endregion
     }
