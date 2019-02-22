@@ -158,8 +158,9 @@ namespace Calculator.Tests.StringExtensionTests
             //Assert
             Assert.AreEqual(expected, actual);
         }
+
         [Test]
-        public void Test_09_0dot1()
+        public void Test_10_0dot1()
         {
 
             // Arrange            
