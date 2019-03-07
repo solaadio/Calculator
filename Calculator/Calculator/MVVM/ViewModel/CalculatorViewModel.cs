@@ -154,7 +154,13 @@ namespace Calculator.MVVM.ViewModel
             if (_currentState == 2)
             {
                 var result = _service.CalculateDouble(_firstNumber, _secondNumber, _mathOperator);
-                var tempResult = result.ToString("").FormatWithThousandsSeparator();
+                var tempResult = result.ToString();
+
+                // we don't want infinity results to be processed
+                if (!double.IsPositiveInfinity(result) && !double.IsNegativeInfinity(result))
+                {
+                    tempResult = result.ToString("").FormatWithThousandsSeparator();
+                }
 
                 ResultText = tempResult;
                 _firstNumber = result;
