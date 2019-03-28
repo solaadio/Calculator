@@ -13,8 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Calculator\Calculator.Library\Calculator.Library.csproj" />
-    <ProjectReference Include="..\Calculator\Calculator.Services\Calculator.Services.csproj" />
+    <ProjectReference Include="..\Calculator.Library\Calculator.Library.csproj" />
+    <ProjectReference Include="..\Calculator.Services\Calculator.Services.csproj" />
   </ItemGroup>
 
 </Project>
