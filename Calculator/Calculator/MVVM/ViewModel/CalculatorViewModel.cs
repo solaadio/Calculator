@@ -154,6 +154,7 @@ namespace Calculator.MVVM.ViewModel
             if (_currentState == 2)
             {
                 var result = _service.CalculateDouble(_firstNumber, _secondNumber, _mathOperator);
+                // ReSharper disable once SpecifyACultureInStringConversionExplicitly
                 var tempResult = result.ToString();
 
                 // we don't want infinity results to be processed

@@ -192,5 +192,39 @@ namespace Calculator.Tests.StringExtensionTests
             //Assert
             Assert.AreEqual(expected, actual);
         }
+
+        [Test]
+        public void Test_12_NullInput()
+        {
+
+            // Arrange            
+            const string input = null;
+            const string expected = null;
+
+
+            // Act
+            var actual = input.FormatWithThousandsSeparator();
+
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void Test_13_EmptyInput()
+        {
+
+            // Arrange            
+            var input = string.Empty;
+            var expected = string.Empty;
+
+
+            // Act
+            var actual = input.FormatWithThousandsSeparator();
+
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
     }
 }
