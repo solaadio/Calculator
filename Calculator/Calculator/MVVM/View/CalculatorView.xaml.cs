@@ -1,14 +1,16 @@
-﻿namespace Calculator.MVVM.View
+﻿using Calculator.Library;
+
+namespace Calculator.MVVM.View
 {
     /// <summary>
     /// CalculatorView
     /// </summary>
-    public partial class CalculatorView
+    public partial class CalculatorView 
     {
-        public CalculatorView()
+        public CalculatorView(IViewModel viewModel)
         {
             InitializeComponent();
-            BindingContext = App.MainViewModel;
+            BindingContext = viewModel;
         }
     }
 }

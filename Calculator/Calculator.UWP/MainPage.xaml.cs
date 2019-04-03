@@ -1,4 +1,6 @@
-﻿namespace Calculator.UWP
+﻿using Calculator.AutoFac;
+
+namespace Calculator.UWP
 {
     public sealed partial class MainPage
     {
@@ -6,7 +8,7 @@
         {
             InitializeComponent();
 
-            LoadApplication(new Calculator.App());
+            LoadApplication(new Calculator.App(new Setup()));
         }
     }
 }

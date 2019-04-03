@@ -1,4 +1,6 @@
-﻿using Calculator.MVVM.View;
+﻿using Autofac;
+using Calculator.AutoFac;
+using Calculator.MVVM.View;
 using Calculator.MVVM.ViewModel;
 using Calculator.Services.Implementations;
 using Xamarin.Forms.Xaml;
@@ -18,7 +20,14 @@ namespace Calculator
         public App()
         {
             InitializeComponent();
-            MainPage = new CalculatorView();
+            //MainPage = new CalculatorView();
+        }
+
+        public App(Setup setup)
+        {
+            AppContainer.Container = setup.CreateContainer();
+
+            MainPage = AppContainer.Container.Resolve<CalculatorView>();
         }
 
         protected override void OnStart()

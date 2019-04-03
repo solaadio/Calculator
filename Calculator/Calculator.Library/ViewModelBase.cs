@@ -1,11 +1,11 @@
 ﻿
 namespace Calculator.Library
 {
-	/// <inheritdoc />
+    /// <inheritdoc cref="ModelBase" />
     /// <summary>
     /// View model base. - this is base class for all viewModels
     /// </summary>
-	public abstract class ViewModelBase : ModelBase
+    public abstract class ViewModelBase : ModelBase, IViewModel
 	{
 
 		protected bool _isBusy;
