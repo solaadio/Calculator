@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculator", "Calculator\Ca
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator.Tests", "Calculator\Calculator.Tests\Calculator.Tests.csproj", "{698A80B2-629C-4BBF-A7EA-38AFA7AEA57A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator.Services", "Calculator\Calculator.Services\Calculator.Services.csproj", "{BCCA5B58-CD9A-4A8B-869D-9D2C99B34709}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculator.Services", "Calculator\Calculator.Services\Calculator.Services.csproj", "{BCCA5B58-CD9A-4A8B-869D-9D2C99B34709}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01. UI", "01. UI", "{7F05FBBB-F249-44C7-ADE4-ED35B3FFC176}"
 EndProject
@@ -27,7 +27,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Platforms", "Platforms", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03. Libraries", "03. Libraries", "{EEF1FA35-0FEF-4FE1-AE3A-781895F4E2FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator.Library", "Calculator\Calculator.Library\Calculator.Library.csproj", "{A0ABD6E4-6124-43BF-A658-A91AB9500C3A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculator.Library", "Calculator\Calculator.Library\Calculator.Library.csproj", "{A0ABD6E4-6124-43BF-A658-A91AB9500C3A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Calculator.Tests.Nunit", "Calculator\Calculator.Tests.Nunit\Calculator.Tests.Nunit.csproj", "{37E6524C-255C-4691-A35E-1E81843A01DB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -489,6 +491,54 @@ Global
 		{A0ABD6E4-6124-43BF-A658-A91AB9500C3A}.Release|x64.Build.0 = Release|Any CPU
 		{A0ABD6E4-6124-43BF-A658-A91AB9500C3A}.Release|x86.ActiveCfg = Release|Any CPU
 		{A0ABD6E4-6124-43BF-A658-A91AB9500C3A}.Release|x86.Build.0 = Release|Any CPU
+		{37E6524C-255C-4691-A35E-1E81843A01DB}.Ad-Hoc|Any CPU.ActiveCfg = Debug|Any CPU
+		{37E6524C-255C-4691-A35E-1E81843A01DB}.Ad-Hoc|Any CPU.Build.0 = Debug|Any CPU
+		{37E6524C-255C-4691-A35E-1E81843A01DB}.Ad-Hoc|ARM.ActiveCfg = Debug|Any CPU
+		{37E6524C-255C-4691-A35E-1E81843A01DB}.Ad-Hoc|ARM.Build.0 = Debug|Any CPU
+		{37E6524C-255C-4691-A35E-1E81843A01DB}.Ad-Hoc|iPhone.ActiveCfg = Debug|Any CPU
+		{37E6524C-255C-4691-A35E-1E81843A01DB}.Ad-Hoc|iPhone.Build.0 = Debug|Any CPU
+		{37E6524C-255C-4691-A35E-1E81843A01DB}.Ad-Hoc|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{37E6524C-255C-4691-A35E-1E81843A01DB}.Ad-Hoc|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{37E6524C-255C-4691-A35E-1E81843A01DB}.Ad-Hoc|x64.ActiveCfg = Debug|Any CPU
+		{37E6524C-255C-4691-A35E-1E81843A01DB}.Ad-Hoc|x64.Build.0 = Debug|Any CPU
+		{37E6524C-255C-4691-A35E-1E81843A01DB}.Ad-Hoc|x86.ActiveCfg = Debug|Any CPU
+		{37E6524C-255C-4691-A35E-1E81843A01DB}.Ad-Hoc|x86.Build.0 = Debug|Any CPU
+		{37E6524C-255C-4691-A35E-1E81843A01DB}.AppStore|Any CPU.ActiveCfg = Debug|Any CPU
+		{37E6524C-255C-4691-A35E-1E81843A01DB}.AppStore|Any CPU.Build.0 = Debug|Any CPU
+		{37E6524C-255C-4691-A35E-1E81843A01DB}.AppStore|ARM.ActiveCfg = Debug|Any CPU
+		{37E6524C-255C-4691-A35E-1E81843A01DB}.AppStore|ARM.Build.0 = Debug|Any CPU
+		{37E6524C-255C-4691-A35E-1E81843A01DB}.AppStore|iPhone.ActiveCfg = Debug|Any CPU
+		{37E6524C-255C-4691-A35E-1E81843A01DB}.AppStore|iPhone.Build.0 = Debug|Any CPU
+		{37E6524C-255C-4691-A35E-1E81843A01DB}.AppStore|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{37E6524C-255C-4691-A35E-1E81843A01DB}.AppStore|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{37E6524C-255C-4691-A35E-1E81843A01DB}.AppStore|x64.ActiveCfg = Debug|Any CPU
+		{37E6524C-255C-4691-A35E-1E81843A01DB}.AppStore|x64.Build.0 = Debug|Any CPU
+		{37E6524C-255C-4691-A35E-1E81843A01DB}.AppStore|x86.ActiveCfg = Debug|Any CPU
+		{37E6524C-255C-4691-A35E-1E81843A01DB}.AppStore|x86.Build.0 = Debug|Any CPU
+		{37E6524C-255C-4691-A35E-1E81843A01DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37E6524C-255C-4691-A35E-1E81843A01DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37E6524C-255C-4691-A35E-1E81843A01DB}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{37E6524C-255C-4691-A35E-1E81843A01DB}.Debug|ARM.Build.0 = Debug|Any CPU
+		{37E6524C-255C-4691-A35E-1E81843A01DB}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{37E6524C-255C-4691-A35E-1E81843A01DB}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{37E6524C-255C-4691-A35E-1E81843A01DB}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{37E6524C-255C-4691-A35E-1E81843A01DB}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{37E6524C-255C-4691-A35E-1E81843A01DB}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{37E6524C-255C-4691-A35E-1E81843A01DB}.Debug|x64.Build.0 = Debug|Any CPU
+		{37E6524C-255C-4691-A35E-1E81843A01DB}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{37E6524C-255C-4691-A35E-1E81843A01DB}.Debug|x86.Build.0 = Debug|Any CPU
+		{37E6524C-255C-4691-A35E-1E81843A01DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37E6524C-255C-4691-A35E-1E81843A01DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37E6524C-255C-4691-A35E-1E81843A01DB}.Release|ARM.ActiveCfg = Release|Any CPU
+		{37E6524C-255C-4691-A35E-1E81843A01DB}.Release|ARM.Build.0 = Release|Any CPU
+		{37E6524C-255C-4691-A35E-1E81843A01DB}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{37E6524C-255C-4691-A35E-1E81843A01DB}.Release|iPhone.Build.0 = Release|Any CPU
+		{37E6524C-255C-4691-A35E-1E81843A01DB}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{37E6524C-255C-4691-A35E-1E81843A01DB}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{37E6524C-255C-4691-A35E-1E81843A01DB}.Release|x64.ActiveCfg = Release|Any CPU
+		{37E6524C-255C-4691-A35E-1E81843A01DB}.Release|x64.Build.0 = Release|Any CPU
+		{37E6524C-255C-4691-A35E-1E81843A01DB}.Release|x86.ActiveCfg = Release|Any CPU
+		{37E6524C-255C-4691-A35E-1E81843A01DB}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -503,6 +553,7 @@ Global
 		{773134CC-DCC5-4970-AD45-BD8A6470463F} = {7F05FBBB-F249-44C7-ADE4-ED35B3FFC176}
 		{F90271E0-2413-48AF-BD9A-08ACBB274430} = {7F05FBBB-F249-44C7-ADE4-ED35B3FFC176}
 		{A0ABD6E4-6124-43BF-A658-A91AB9500C3A} = {EEF1FA35-0FEF-4FE1-AE3A-781895F4E2FC}
+		{37E6524C-255C-4691-A35E-1E81843A01DB} = {ECC460C0-EBFE-422E-BB4F-B916BB64BE54}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4B8C74E8-6463-4704-9DE2-D8A87C327A8C}

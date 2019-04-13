@@ -2,6 +2,7 @@
 using Android.App;
 using Android.Content.PM;
 using Android.OS;
+using Calculator.AutoFac;
 
 namespace Calculator.Droid
 {
@@ -14,8 +15,8 @@ namespace Calculator.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(savedInstanceState);
-            Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            LoadApplication(new App());
+            global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            LoadApplication(new App(new Setup()));
         }
     }
 }

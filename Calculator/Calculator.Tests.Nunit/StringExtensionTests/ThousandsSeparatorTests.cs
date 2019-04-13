@@ -1,7 +1,7 @@
-﻿using NUnit.Framework;
-using Calculator.Library.Extensions;
+﻿using Calculator.Library.Extensions;
+using NUnit.Framework;
 
-namespace Calculator.Tests.StringExtensionTests
+namespace Calculator.Tests.Nunit.StringExtensionTests
 {
     [TestFixture]
     public class ThousandsSeparatorTests
